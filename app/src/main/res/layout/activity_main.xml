@@ -14,6 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="304dp"
         android:text="Encode"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
