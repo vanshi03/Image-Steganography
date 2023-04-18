@@ -14,6 +14,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -52,6 +53,7 @@ public class Encode extends AppCompatActivity implements TextEncodingCallback {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_encode);
 
         //initialized the UI components
@@ -174,6 +176,7 @@ public class Encode extends AppCompatActivity implements TextEncodingCallback {
         try {
             fOut = new FileOutputStream(file);
             bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fOut); // saving the Bitmap to a file
+            whether_encoded.setText("Image Saved!!");
             fOut.flush(); // Not really required
             fOut.close(); // do not forget to close the stream
             whether_encoded.post(new Runnable() {
